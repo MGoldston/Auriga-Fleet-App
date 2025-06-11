@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './index.css';
 
 const App = () => {
   const fleet = [
@@ -9,24 +10,24 @@ const App = () => {
   ];
 
   return (
-    <div style={{ padding: 20 }}>
-      <h1>Auriga Fleet Dashboard</h1>
-      <table>
-        <thead>
+    <div className="p-6">
+      <h1 className="text-2xl font-bold mb-4">Auriga Fleet Dashboard</h1>
+      <table className="table-auto w-full bg-white shadow-md rounded-lg overflow-hidden">
+        <thead className="bg-gray-200">
           <tr>
-            <th>Registration</th>
-            <th>Model</th>
-            <th>Hours</th>
-            <th>Next Due</th>
+            <th className="px-4 py-2 text-left">Registration</th>
+            <th className="px-4 py-2 text-left">Model</th>
+            <th className="px-4 py-2 text-left">Hours</th>
+            <th className="px-4 py-2 text-left">Next Due</th>
           </tr>
         </thead>
         <tbody>
           {fleet.map((a, i) => (
-            <tr key={i}>
-              <td>{a.rego}</td>
-              <td>{a.model}</td>
-              <td>{a.hours}</td>
-              <td>{a.nextDue}</td>
+            <tr key={i} className="hover:bg-gray-100">
+              <td className="border-t px-4 py-2">{a.rego}</td>
+              <td className="border-t px-4 py-2">{a.model}</td>
+              <td className="border-t px-4 py-2">{a.hours}</td>
+              <td className="border-t px-4 py-2">{a.nextDue}</td>
             </tr>
           ))}
         </tbody>
